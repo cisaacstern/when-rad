@@ -172,6 +172,9 @@ class Interact(param.Parameterized):
         if self.cache_exists == True:
             self.elevation = np.load(f'{self.cachepath}/elevation.npy')
             
+            # TODO: adjust control flow and remove the following line
+            npz = np.load(f'{self.datapath}/{self.data}', allow_pickle=True)
+
         else:
             subprocess.run(['mkdir', self.cachepath])
 
