@@ -8,6 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import holoviews as hv
 from holoviews import opts
+from bokeh.settings import settings
 
 from templates.template import template
 from static.css import css
@@ -20,7 +21,7 @@ from static.js import js
 import config as c
 
 hv.extension('bokeh', 'matplotlib')
-
+settings.resources = 'cdn'
 pn.config.raw_css = [css,]
 
 name = 'when-rad'
